@@ -1,0 +1,47 @@
+.page-wrapper{
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: lavenderblush
+}
+
+.header {
+  font-size: 22px;
+  padding: 30px;
+  border: 1px solid white;
+}
+
+.body-wrapper {
+  display: flex;
+  /* flex-direction: column;
+  gap: 10px; */
+  /* padding-top: 40px; */
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 30px;
+}
+
+.hidden {
+  width: 800px;
+  display: none;
+}
+
+#first-container {
+  width: 500px;
+  /* padding: 25px 0 0 100px */
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+.image-container {
+  width: 200px;
+  height: 200px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.chocolate-box {
+  padding-top: 40px;
+}
