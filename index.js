@@ -55,9 +55,9 @@ const svgWidth = 280
 
       let xScale = d3
         .scalePoint()
-        .range([40, 760])
+        .range([0, 720])
         .domain(['Fat', 'Cholesterol', 'Sodium', 'Carbohydrate',
-          'Protein', 'Vitamin D', 'Calcium', 'Iron', 'Potassium', ''])
+          'Protein', 'Vitamin D', 'Calcium', 'Iron', 'Potassium',''])
     
       let xAxis = d3.axisBottom()
         .scale(xScale)
@@ -131,11 +131,20 @@ const svgWidth = 280
             .attr("transform", "translate(0,0)")
             .call(yAxis)
             .style("font-size", "20px")
+          d3.select(`#chocolate-${d.index}`)
+            .select('svg')
             .append("g")
+            .attr('class', 'x-axis')
             .attr("transform", `translate(0, ${infoSvgHeight})`)
             .call(xAxis)
-            .style("font-size", "15px")
-            .attr('rotate', '-36degree')
+            .style("font-size", "13px")
+          d3.select(`#chocolate-${d.index}`)
+            .select('svg')
+            .select('.x-axis')
+            .selectAll('text')
+            .attr('transform', 'translate(40, 0)')
+
+            
         })
     
       // const chocolateInfoDiv = d3.select('#info')
