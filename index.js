@@ -2,9 +2,9 @@ const svgWidth = 280
     const svgHeight = 540
     const rectWidth = 70
     const rectHeight = 90
-    const infoSvgWidth = 600
+    const infoSvgWidth = 800
     const infoSvgHeight = 500
-    const infoRectWidth = 60
+    const infoRectWidth = 80
     // const svgWidth = 600
     // const svgHeight = 240
     // const rectWidth = 100
@@ -55,7 +55,7 @@ const svgWidth = 280
 
       let xScale = d3
         .scalePoint()
-        .range([30, 570])
+        .range([40, 760])
         .domain(['Fat', 'Cholesterol', 'Sodium', 'Carbohydrate',
           'Protein', 'Vitamin D', 'Calcium', 'Iron', 'Potassium', ''])
     
@@ -134,7 +134,7 @@ const svgWidth = 280
             .append("g")
             .attr("transform", `translate(0, ${infoSvgHeight})`)
             .call(xAxis)
-            .style("font-size", "20px")
+            .style("font-size", "15px")
             .attr('rotate', '-36degree')
         })
     
