@@ -1,13 +1,19 @@
 .page-wrapper{
   min-width: 100vw;
   min-height: 100vh;
-  background-color: lavenderblush
+  background-color: #d8caaa;
+  overflow: visible;
+
 }
 
 .header {
-  font-size: 22px;
   padding: 30px;
-  border: 1px solid white;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  text-align: center;
+  font-weight: 600; 
+  color: white;
+  font-size: 60px;
+  background-color: #562310;
 }
 
 .body-wrapper {
@@ -20,7 +26,6 @@
 }
 
 .hidden {
-  width: 800px;
   display: none;
 }
 
@@ -32,16 +37,44 @@
   padding-top: 80px;
 }
 
-.image-container {
-  width: 200px;
-  height: 200px;
+.info-header {
+  display: flex;
 }
+
+.info-header > p {
+  padding: 10px 0 0 0;
+}
+
+.image-container {
+  padding: 0 100px;
+  width: 200px;
+  height: 70px;
+}
+
 
 .image {
   width: 100%;
   height: 100%;
 }
 
+.image-container2 {
+  margin-top: -20px;
+  padding: 0 100px;
+  width: 200px;
+  height: 100px;
+}
+
+.image2 {
+  width: 100%;
+  height: 100%;
+}
+
 .chocolate-box {
-  padding-top: 40px;
+  padding: 40px 0;
+}
+
+.open {
+  /* width: 800px; */
+  margin-top: 30px;
+  margin-left: 100px;
 }

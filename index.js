@@ -3,7 +3,7 @@ const svgWidth = 280
     const rectWidth = 70
     const rectHeight = 90
     const infoSvgWidth = 800
-    const infoSvgHeight = 500
+    const infoSvgHeight = 470
     const infoRectWidth = 80
     // const svgWidth = 600
     // const svgHeight = 240
@@ -78,7 +78,6 @@ const svgWidth = 280
         .attr('fill', '#5e3101')
         .attr('stroke', 'black')
         .attr('stroke-width', 3)
-        // .attr('class', 'chocolate-box' )
         .on('mouseover', function() {
           d3.select(this)
             .style('fill', '#7B3F00')
@@ -88,17 +87,7 @@ const svgWidth = 280
             .style('fill', '#5e3101')
         })
         .on('click', function(d) {
-          // d3.select('#info')
-          //   .text(d.name)
-          //   .append('img')
-          //   .attr('width', '200px')
-          //   .attr('height', '200px')
-          //   .attr('src', d.image)
-          // d3.select('#info')
-          //   .append('svg')
-          //   .attr("width", '100px')
-          //   .attr("height", '100px')
-          //   .attr('fill', 'black')
+      
           for(let i = 1; i <= scaledChocolates.length; i++) {
             if(i !== d.index) {
               document.getElementById(`chocolate-${i}`).className = "hidden"
@@ -116,15 +105,24 @@ const svgWidth = 280
             .attr('height', infoSvgHeight)
             .selectAll('rect')
             .data(Object.values(scaledChocolates[d.index-1]).slice(4))
-            .enter()
-            .append('rect')
+            .join(
+              enter => {
+                return enter.append('rect')
+                  .attr('x', (d, i) => i * infoRectWidth)
+                  .attr('height', 0)
+                  .attr('y', infoSvgHeight)
+                  .attr('fill', '#915c48')
+                  .attr('stroke', 'black')
+                  .attr('stroke-width', 2)
+              }
+            )
             .attr('width', infoRectWidth)
+            .transition(d3.transition().duration(1000))
             .attr('x', (d, i) => i * infoRectWidth)
             .attr('height', d => d)
             .attr('y', d => infoSvgHeight - d)
-            .attr('fill', 'plum')
+            .attr('fill', '#562310')
             .attr('stroke', 'black')
-            .transition()
           d3.select(`#chocolate-${d.index}`)
             .select('svg')
             .append("g")
@@ -142,26 +140,7 @@ const svgWidth = 280
             .select('svg')
             .select('.x-axis')
             .selectAll('text')
-            .attr('transform', 'translate(40, 0)')
-
-            
+            .attr('transform', 'translate(40, 0)')   
         })
     
-      // const chocolateInfoDiv = d3.select('#info')
-      //   .selectAll('div')
-      //   .data(chocolates)
-      //   .enter()
-      //   .append('div')
-      //   .attr('id', function(d, i) {
-      //     return `chocolate-info-${i}` 
-      //   })
-
-      // for(let i = 0; i < chocolates.length; i++) {
-      //   d3.select(`#chocolate-info-${i}`)
-      //   .selectAll('div')
-      //   .data([chocolates[i].name, chocolates[i].type])
-      //   .enter()
-      //   .append('div')
-      //   .text(d => d)
-      // }
     })  
