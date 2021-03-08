@@ -88,7 +88,7 @@ const svgWidth = 280
         })
         .on('click', function(d) {
       
-          for(let i = 1; i <= scaledChocolates.length; i++) {
+          for(let i = 0; i <= scaledChocolates.length; i++) {
             if(i !== d.index) {
               document.getElementById(`chocolate-${i}`).className = "hidden"
             }

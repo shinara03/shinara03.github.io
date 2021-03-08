@@ -78,3 +78,24 @@
   margin-top: 30px;
   margin-left: 100px;
 }
+
+.default {
+  display: flex;
+  padding: 270px 0;
+  color: #562310;
+  text-align: center;
+  text-shadow: -1px 1px 0 #000,
+                1px 1px 0 white,
+                1px -1px 0 white,
+                -1px -1px 0 white;
+}
+
+.click {
+  font-size: 60px;
+  padding-left: 10px;
+  font-weight: 600;
+}
+
+#left {
+  font-size: 60px;
+}
